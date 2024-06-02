@@ -1,0 +1,16 @@
+<resources>
+    <color name="lemon_20">#F0572F</color>
+    <color name="lemon_40">#F06B2F</color>
+    <color name="lemon_60">#F07F2F</color>
+    <color name="lemon_80">#F0932F</color>
+    <color name="lemon_100">#F0A72F</color>
+    <color name="lemon_120">#F0BB2F</color>
+    <color name="lemon_140">#F0CF2F</color>
+    <color name="lemon_160">#F0E32F</color>
+    <color name="lemon_180">#F0F72F</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="neutral_gray">#BDBDBD</color>
+    <color name="neutral_dark_gray">#757575</color>
+    <color name="danger_red">#D32F2F</color>
+</resources>
