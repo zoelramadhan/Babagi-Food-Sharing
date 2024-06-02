@@ -2,7 +2,7 @@
 Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memiliki sisa makanan berlebih dengan pengguna yang ingin membeli atau mendapatkan makanan secara gratis. Menggunakan Babagi pengguna dapat menemukan informasi berbagai menu makanan sisa yang masih layak makan di restoran-restoran terdekat dari rumahnya secara online
 
 # Fitur Utama
-**Informasi Menu**: Babagi menyediakan informasi menu makanan yang akan didonasikan oleh pihak restoran secar gratis atau dengan harga yang lebih murah
+- **Informasi Menu**: Babagi menyediakan informasi menu makanan yang akan didonasikan oleh pihak restoran secar gratis atau dengan harga yang lebih murah
 - **Detail Menu**: Informasi terkait menu yang disertai waktu pembagian, lokasi restoran, dan bahan pembuatan makanan
 - **Menyimpan Menu ke Daftar Simpan**: Pengguna dapat menyimpan menu rutin yang sering dibagikan oleh restoran terkait
 
