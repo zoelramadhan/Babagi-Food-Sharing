@@ -31,7 +31,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/foodIcon" />
+                    android:src="@drawable/food" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -62,14 +62,12 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_recipes"
+                android:id="@+id/rv_home_foods"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 android:paddingBottom="20dp"
-                android:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                android:spanCount="2"
                 tools:itemCount="10"
                 tools:listitem="@layout/item_food" />
 

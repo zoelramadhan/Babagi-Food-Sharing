@@ -1,66 +1,129 @@
 package com.example.babagi.fragments;
 
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.babagi.MainActivity;
 import com.example.babagi.R;
+import com.example.babagi.config.DbConfig;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfileFragment extends Fragment {
+    private EditText etProfileName;
+    private EditText etProfilEmail;
+    private EditText etProfilePassword;
+    private EditText etProfileConfirmPassword;
+    private TextView tvErrorMessage;
+    private Button btnSaveProfile;
+    private Button btnLogout;
+    private SharedPreferences preferences;
+    private DbConfig dbConfig;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        etProfileName = view.findViewById(R.id.et_profile_name);
+        etProfilEmail = view.findViewById((R.id.et_profile_email));
+        etProfilePassword = view.findViewById(R.id.et_profile_password);
+        etProfileConfirmPassword = view.findViewById(R.id.et_profile_confirm_password);
+        tvErrorMessage = view.findViewById(R.id.tv_profile_error_message);
+        btnSaveProfile = view.findViewById(R.id.btn_save_profile);
+        btnLogout = view.findViewById(R.id.btn_logout);
+
+        preferences = requireActivity().getSharedPreferences("user_pref", requireActivity().MODE_PRIVATE);
+        dbConfig = new DbConfig(requireActivity());
+
+        int userId = preferences.getInt("user_id", 0);
+        Cursor cursor = dbConfig.getUserDataById(userId);
+        if (cursor.moveToFirst()) {
+            do {
+                etProfileName.setText(cursor.getString(cursor.getColumnIndexOrThrow("name")));
+                etProfilEmail.setText(cursor.getString(cursor.getColumnIndexOrThrow("email")));
+                etProfilePassword.setText(cursor.getString(cursor.getColumnIndexOrThrow("password")));
+                etProfileConfirmPassword.setText(cursor.getString(cursor.getColumnIndexOrThrow("password")));
+            } while (cursor.moveToNext());
+        }
+
+        btnSaveProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = etProfileName.getText().toString();
+                String email = etProfilEmail.getText().toString();
+                String password = etProfilePassword.getText().toString();
+                String confirmPassword = etProfileConfirmPassword.getText().toString();
+
+                if (name.isEmpty()) {
+                    etProfileName.setError("Tolong Masukkan nama kamu");
+                } else if (email.isEmpty()) {
+                    etProfilEmail.setError("Tolong masukkan email kamu");
+                } else if (password.isEmpty()) {
+                    etProfilePassword.setError("Tolong Masukkan password kamu");
+                } else if (confirmPassword.isEmpty()) {
+                    etProfileConfirmPassword.setError("Tolong Masukkan Konfirmasi Password");
+                } else if (!password.equals(confirmPassword)) {
+                    etProfileConfirmPassword.setError("Password dan konfirmasi Password harus sama");
+                } else {
+                    try {
+                        dbConfig.updateProfile(userId, name, email, password);
+                        Toast.makeText(requireActivity(), "profile diperbarui", Toast.LENGTH_SHORT).show();
+                        requireActivity().getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, new HomeFragment())
+                                .commit();
+                        BottomNavigationView bottomNavigationView = requireActivity().findViewById(R.id.bottom_navigation);
+                        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+                    } catch (Exception e) {
+                        tvErrorMessage.setVisibility(View.VISIBLE);
+                        Toast.makeText(requireActivity(), "Email sudah terdaftar", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showLogoutDialog();
+            }
+        });
+    }
+
+    private void showLogoutDialog() {
+        new AlertDialog.Builder(requireActivity())
+                .setTitle("Logout")
+                .setMessage("Kamu yakin mau logout?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("user_id", null);
+                    editor.putBoolean("is_logged_in", false);
+                    editor.apply();
+                    Intent toMainActivity = new Intent(requireActivity(), MainActivity.class);
+                    startActivity(toMainActivity);
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }

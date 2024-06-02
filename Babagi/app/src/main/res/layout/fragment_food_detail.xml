@@ -11,23 +11,23 @@
             android:orientation="vertical">
 
             <include
-                android:id="@+id/recipe_detail_loading_view"
+                android:id="@+id/food_detail_loading_view"
                 layout="@layout/loading_state"
                 android:visibility="gone" />
 
             <LinearLayout
-                android:id="@+id/recipe_detail_main_view"
+                android:id="@+id/food_detail_main_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/iv_recipe_image"
+                    android:id="@+id/iv_food_image"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/BabagiLogo" />
+                    android:src="@drawable/babagilogo" />
 
                 <ScrollView
                     android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/tv_recipe_title"
+                                android:id="@+id/tv_food_title"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -57,64 +57,22 @@
                                 android:textStyle="bold" />
 
                             <ImageView
-                                android:id="@+id/iv_favorite_button"
+                                android:id="@+id/iv_save_button"
                                 android:layout_width="35dp"
                                 android:layout_height="35dp"
                                 android:layout_marginStart="10dp"
                                 android:background="@android:color/transparent"
-                                android:src="@drawable/baseline_archive_border_24"
-                                android:tint="@color/lemon_40" />
+                                android:src="@drawable/baseline_archive_border_24" />
+
                         </LinearLayout>
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            app:cardCornerRadius="5dp">
-
-                            <TextView
-                                android:id="@+id/tv_recipe_difficulty"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@color/lemon_120"
-                                android:paddingHorizontal="12dp"
-                                android:paddingVertical="2dp"
-                                android:text="Kelayakan"
-                                android:textColor="@color/white"
-                                android:textSize="14sp" />
-                        </androidx.cardview.widget.CardView>
-
                         <TextView
-                            android:id="@+id/tv_recipe_description"
+                            android:id="@+id/tv_food_description"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:text="Pair warm, intensely smoky, chipotle tofu with soothing smashed avocado. This vegan combo is incredible on toast or in breakfast tacos."
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/tv_recipe_time"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="22dp"
-                            android:drawableLeft="@drawable/time"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/neutral_dark_gray"
-                            android:text="Durasi Bagi"
-                            android:textColor="@color/neutral_dark_gray"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/tv_recipe_portion"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:drawableLeft="@drawable/foodIcon"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="@color/neutral_dark_gray"
-                            android:text="Tempat"
-                            android:textColor="@color/neutral_dark_gray"
                             android:textSize="18sp" />
 
                         <TextView
@@ -127,7 +85,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/tv_recipe_ingredients"
+                            android:id="@+id/tv_food_ingredients"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"

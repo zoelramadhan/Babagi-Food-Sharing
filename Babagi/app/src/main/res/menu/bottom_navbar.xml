@@ -11,7 +11,7 @@
         android:title="Search" />
 
     <item
-        android:id="@+id/nav_favorites"
+        android:id="@+id/nav_saves"
         android:icon="@drawable/baseline_archive_24"
         android:title="Favorite" />
 

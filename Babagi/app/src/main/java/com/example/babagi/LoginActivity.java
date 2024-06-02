@@ -1,11 +1,14 @@
 package com.example.babagi;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,3 +57,19 @@ public class LoginActivity extends AppCompatActivity {
                     // Login success
                     do {
                         preferences = getSharedPreferences("user_pref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        int userId = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+                        editor.putInt("user_id", userId);
+                        editor.putBoolean("is_logged_in", true);
+                        editor.apply();
+                        Intent toHomeActivity = new Intent(this, HomeActivity.class);
+                        startActivity(toHomeActivity);
+                    } while (cursor.moveToNext());
+                } else {
+                    tvErrorMessage.setVisibility(View.VISIBLE);
+                    Toast.makeText(this, "Email or password is wrong!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+}

@@ -13,7 +13,7 @@
             android:orientation="vertical">
 
             <include
-                android:id="@+id/eror_no_connection_loading_view"
+                android:id="@+id/eror_connection_loading_view"
                 layout="@layout/loading_state"
                 android:visibility="gone" />
 

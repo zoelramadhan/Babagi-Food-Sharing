@@ -2,6 +2,7 @@ package com.example.babagi.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -13,14 +14,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.babagi.R;
+import com.example.babagi.models.Food;
 import com.example.babagi.network.ApiService;
+import com.example.babagi.network.RetrofitClient;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ErrorConnectionFragment extends Fragment {
-    private String apiKey = "634417f2b5f747548d9b312f01afce9f";
-    private String apiHost = "";
+    private String apiKey = "3a5e778230mshaa0d62d3e713967p101f9ejsne048ac4cfc0f";
+    private String apiHost = "the-vegan-recipes-db.p.rapidapi.com";
     private View erorConnectionLoadingView;
     private Button btnRetry;
     private ApiService service;
@@ -55,17 +63,17 @@ public class ErrorConnectionFragment extends Fragment {
                         try {
                             Thread.sleep(500);
 
-                            Call<List<Recipe>> call = service.getRecipes(apiKey, apiHost);
-                            call.enqueue(new Callback<List<Recipe>>() {
+                            Call<List<Food>> call = service.getFoods(apiKey, apiHost);
+                            call.enqueue(new Callback<List<Food>>() {
                                 @Override
-                                public void onResponse(@NonNull Call<List<Recipe>> call, @NonNull Response<List<Recipe>> response) {
+                                public void onResponse(@NonNull Call<List<Food>> call, @NonNull Response<List<Food>> response) {
                                     if (response.isSuccessful()) {
                                         getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
                                     }
                                 }
 
                                 @Override
-                                public void onFailure(@NonNull Call<List<Recipe>> call, @NonNull Throwable t) {
+                                public void onFailure(@NonNull Call<List<Food>> call, @NonNull Throwable t) {
                                     erorConnectionLoadingView.setVisibility(View.GONE);
                                 }
                             });

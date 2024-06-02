@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Babagi_Background"
+    android:background="@drawable/babagi_background"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:paddingHorizontal="60dp"
             android:paddingVertical="30dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/BabagiLogoHorizontal" />
+            android:src="@drawable/babagilogohorizontal" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
