@@ -14,7 +14,7 @@ Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memilik
 6. **Profile** : Halaman profil agar pengguna dapat memperbarui nama penggunanya di aplikasi, emailnya, hingga password akunnya.
 
 # Pedoman Teknis
-**1. Register and Login:****: 
+**1. Register and Login:**
 - Data pengguna yang melakukan registrasi akan disimpan di lokal database SQLite
 - Pada saat pengguna selesai registrasi maupun pada saat login, maka akan muncul dua informasi yang disimpan pada SharedPreference, Yaitu:
         - "is_Logged_in" dengan tipe data boolean. Berfungsi agar ketika pengguna sudah Login pada Babagi lalu menutup aplikasi, maka saat dibuka kembali, pengguna langsung diarahkan ke halaman utama Babagi (tidak memerlukan login kembali).
@@ -38,4 +38,4 @@ Implementasi pengelolaan hasil pencarian melalui metode .searchMenu(String query
 - CardView: Menampilkan data dalam bentuk kartu dengan tata letak yang rapih.
 
 # Authors
-@muhammadzoelramadhan
+muhammadzoelramadhan
