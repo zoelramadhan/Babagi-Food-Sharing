@@ -11,11 +11,6 @@
         android:title="Search" />
 
     <item
-        android:id="@+id/nav_saves"
-        android:icon="@drawable/baseline_archive_24"
-        android:title="Favorite" />
-
-    <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/baseline_account_circle_24"
         android:title="Profile" />

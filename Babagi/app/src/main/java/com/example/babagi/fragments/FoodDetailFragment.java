@@ -34,7 +34,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FoodDetailFragment extends Fragment {
-    private String apiKey = "3a5e778230mshaa0d62d3e713967p101f9ejsne048ac4cfc0f";
+    private String apiKey = "7655c9212amshf5aec19489a8205p142135jsnc679c7e52ee7";
     private String apiHost = "the-vegan-recipes-db.p.rapidapi.com";
     private int foodId;
     private View foodDetailLoadingView;
@@ -45,7 +45,6 @@ public class FoodDetailFragment extends Fragment {
     private TextView tvFoodIngredients;
     private Food food;
     private ApiService service;
-    private ImageView ivSaveButton;
     private boolean isSave = false;
     private DbConfig dbconfig;
     private SharedPreferences preferences;
@@ -70,7 +69,6 @@ public class FoodDetailFragment extends Fragment {
         tvFoodTitle = view.findViewById(R.id.tv_food_title);
         tvFoodDescription = view.findViewById(R.id.tv_food_description);
         tvFoodIngredients = view.findViewById(R.id.tv_food_ingredients);
-        ivSaveButton = view.findViewById(R.id.iv_save_button);
 
         service = RetrofitClient.getClient().create(ApiService.class);
 
@@ -130,25 +128,7 @@ public class FoodDetailFragment extends Fragment {
                 int userId = preferences.getInt("user_id", 0);
                 isSave = dbconfig.isSave(userId,foodId);
 
-                updateSaveIcon();
-
-                ivSaveButton.setOnClickListener(v -> {
-                    if (isSave) {
-                        dbconfig.deleteSave(userId, foodId);
-                    } else {
-                        dbconfig.insertSave(userId, foodId);
-                    }
-                    isSave = !isSave;
-                    updateSaveIcon();
-                });
             }
         });
-    }
-    private void updateSaveIcon() {
-        if (isSave) {
-            ivSaveButton.setImageResource(R.drawable.save);
-        } else {
-            ivSaveButton.setImageResource(R.drawable.unsave);
-        }
     }
 }

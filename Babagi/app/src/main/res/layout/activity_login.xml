@@ -64,11 +64,11 @@
                         android:id="@+id/et_login_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lemon_20"
                         android:hint="Masukkan Email"
                         android:inputType="textEmailAddress"
                         android:maxLines="1"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:background="@drawable/outline"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -81,8 +81,8 @@
                         android:id="@+id/et_login_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/lemon_20"
                         android:hint="Masukkan Kata Sandi"
+                        android:background="@drawable/outline"
                         android:inputType="textPassword"
                         android:maxLines="1"
                         android:textColor="@color/black" />

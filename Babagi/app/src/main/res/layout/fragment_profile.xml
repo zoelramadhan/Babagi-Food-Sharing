@@ -22,6 +22,7 @@
                 android:layout_marginVertical="20dp"
                 android:adjustViewBounds="true"
                 android:paddingHorizontal="76dp"
+                android:background="@drawable/outline"
                 android:paddingVertical="30dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/babagilogo" />
@@ -30,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
+                android:background="@drawable/outline"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
@@ -55,6 +57,8 @@
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/neutral_gray"
                             android:hint="Name"
+                            android:background="@drawable/outline"
+                            android:textIsSelectable="true"
                             android:inputType="text"
                             android:maxLines="1"
                             android:textColor="@color/black" />
@@ -72,6 +76,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/neutral_gray"
+                            android:background="@drawable/outline"
                             android:hint="Email"
                             android:inputType="textEmailAddress"
                             android:maxLines="1"
@@ -89,6 +94,7 @@
                             android:id="@+id/et_profile_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/outline"
                             android:backgroundTint="@color/neutral_gray"
                             android:hint="Password"
                             android:inputType="textPassword"
@@ -108,6 +114,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/neutral_gray"
+                            android:background="@drawable/outline"
                             android:hint="Confirm Password"
                             android:inputType="textPassword"
                             android:maxLines="1"

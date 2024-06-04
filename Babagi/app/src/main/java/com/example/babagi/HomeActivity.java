@@ -4,16 +4,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.babagi.fragments.HomeFragment;
 import com.example.babagi.fragments.ProfileFragment;
-import com.example.babagi.fragments.SavedFragment;
 import com.example.babagi.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -40,8 +35,6 @@ public class HomeActivity extends AppCompatActivity {
                     selectedFragment = new HomeFragment();
                 } else if (menuItem.getItemId() == R.id.nav_search) {
                     selectedFragment = new SearchFragment();
-                } else if (menuItem.getItemId() == R.id.nav_saves) {
-                    selectedFragment = new SavedFragment();
                 } else if (menuItem.getItemId() == R.id.nav_profile) {
                     selectedFragment = new ProfileFragment();
                 }

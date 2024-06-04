@@ -62,13 +62,11 @@ public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.FoodViewHold
     public static class FoodViewHolder extends RecyclerView.ViewHolder{
         private final LinearLayout linearLayoutFoodItem;
         private final ImageView ivFoodImage;
-        private final ImageView ivSaveButton;
         private final TextView tvFoodTitle;
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             linearLayoutFoodItem = itemView.findViewById(R.id.linearlayout_item_food);
             ivFoodImage = itemView.findViewById(R.id.iv_food_image);
-            ivSaveButton = itemView.findViewById(R.id.iv_save_button);
             tvFoodTitle = itemView.findViewById(R.id.tv_food_title);
         }
         public void bind(Food food, int userId) {
@@ -77,7 +75,6 @@ public class FoodsAdapter extends RecyclerView.Adapter<FoodsAdapter.FoodViewHold
 
             DbConfig dbConfig = new DbConfig(itemView.getContext());
             boolean isSave = dbConfig.isSave(userId, food.getId());
-            ivSaveButton.setVisibility(isSave ? View.VISIBLE : View.GONE);
         }
     }
 }

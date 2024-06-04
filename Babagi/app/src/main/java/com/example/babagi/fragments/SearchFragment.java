@@ -31,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchFragment extends Fragment {
-    private String apiKey = "3a5e778230mshaa0d62d3e713967p101f9ejsne048ac4cfc0f";
+    private String apiKey = "7655c9212amshf5aec19489a8205p142135jsnc679c7e52ee7";
     private String apiHost = "the-vegan-recipes-db.p.rapidapi.com";
     private EditText etSearchFoods;
     private ImageView ivNotFound;
