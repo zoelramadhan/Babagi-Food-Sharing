@@ -8,11 +8,13 @@ Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memilik
 # Penggunaan Aplikasi
 1. **Register**: Ketika pertama kali membuka aplikais Babagi, akan muncul splash screen. Apabila baru pertama kali menggunakan aplikasi Babagi makan dapat menekan tombol "Daftar". Lalu Masukkan semua informasi yang tertera dan tombol Kirim.
 ![image 11](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/c793b249-1b3f-4de7-a034-cea78518eb2f)
-![image 11](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/3622f8b0-0b78-4084-9311-22c28f0a5fb7)
+![image 12 (1)](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/a28aab67-9e43-4770-9119-9a4537332bc3)
+
 
 
 3. **Login**: Apabila telah memiliki akun, makan pada splash screen langsung klik tombol "masuk" untuk diarahkan ke halaman login Babagi.
-![image 11](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/535d7511-6693-46b2-97e5-f54778d92a82)
+![image 13 (1)](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/b80a8d4a-907b-4738-bb36-5e52f3e6533f)
+
 
 
 5. **Home** : Halaman beranda akan menampilkan seluruh daftar menu makanan yang akan didonasikan dalam bentu card.
