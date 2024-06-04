@@ -19,11 +19,14 @@ Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memilik
 - Pada saat pengguna selesai registrasi maupun pada saat login, maka akan muncul dua informasi yang disimpan pada SharedPreference, Yaitu:
         - "is_Logged_in" dengan tipe data boolean. Berfungsi agar ketika pengguna sudah Login pada Babagi lalu menutup aplikasi, maka saat dibuka kembali, pengguna langsung diarahkan ke halaman utama Babagi (tidak memerlukan login kembali).
         -  "user_id" dengan tipe data int. Berfungsi untuk menyimpan memori id user yang sedang login pada Babagi.
+  
 **2. Home:****
   - Implementasi menggunakan RecyclerView untuk menampilkan daftar makanan, CardView untuk tampilan card, dan Picasso untuk memuat gambar makanannya dari API.
+
 **3. Pencarian Menu Makanan**
 Implementasi pengelolaan hasil pencarian melalui metode .searchMenu(String query) yang ada pada SearchMenuAdapter. Menggunakan fungsi bawaan Java untuk mengelolal persamaan text yang diinput dengan hasil filter data.
-**5. Profile**
+
+**4. Profile**
 - Menggunakan SQLite yang sudah dikonfigurasikan melalui class DbConfig. Implementasi memperbarui data pengguna melalui metode DbConfig.udpateProfil(int userId, String name, String email, String password).
 - Ketika tombol "Logout" diklik, maka infomrasi pada SharedPreference akan diperbarui.
   - "user_id" -> null
