@@ -11,12 +11,9 @@ Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memilik
 3. **Home** : Halaman beranda akan menampilkan seluruh daftar menu makanan yang akan didonasikan dalam bentu card.
 4. **Menu Detail** : Menampilkan detail makanan yang didonasikan ke pengguna berupa nama makanan, deskripsi, gambar, dan ingredients
 5. **Cari Menu** : Mencari makanan berdasarkan nama makanan.
-![image](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/95821e05-d2c6-4cde-90ca-55815c45c3c7)
 7. **Profile** : Halaman profil agar pengguna dapat memperbarui nama penggunanya di aplikasi, emailnya, hingga password akunnya.
-![image 2](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/71f86b70-ca5f-4a33-bfe5-012d3da4d597)
-
+![image 2](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/71f86b70-ca5f-4a33-bfe5-012d3da4d597) ![image 2 (1)](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/4fb76441-024c-42c5-a851-2dae47518e94)
 8. Loading & Error State
-![image](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/553c6d10-4e17-45e3-85a1-f89e0cb131d2)![image](https://github.com/zoelramadhan/Babagi-Food-Sharing/assets/113816321/9d74c11b-d0bd-428e-a210-3370790f58d5)
 
 
 
