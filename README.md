@@ -42,3 +42,11 @@ Babagi merupakan aplikasi food sharing untuk menghubungkan restoran yang memilik
 
 # Authors
 muhammadzoelramadhan
+
+# Referensi
+Vegan Recipes API
+Figma Community
+Segari
+StackoverFlow
+Google
+GIF Load
